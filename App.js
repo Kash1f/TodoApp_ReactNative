@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 
 export default function App() {
+
+  const [enteredGoalText, setEnderedGoalText] = useState('');
+  const [courseGoals, setCourseGoals] = useState([]);
 
   function goalInputHandler(){
 
@@ -20,7 +24,7 @@ export default function App() {
       </View>
 
       <View>
-        <Text>List of Goals!</Text>
+        <Text>{courseGoals}</Text>
       </View>
     </View>
   );
