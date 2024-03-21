@@ -5,9 +5,8 @@ export default function App() {
   const [enteredGoalText, setEnderedGoalText] = useState("");
   const [courseGoals, setCourseGoals] = useState([]);
 
-  const currentCourseGoals = [
-    ...courseGoals, enteredGoalText
-  ]
+
+  
 
   //this function will fetch the user input
   function goalInputHandler(enteredText) {
@@ -17,7 +16,9 @@ export default function App() {
   //this function will run when the Add button will be clicked
   function addGoalHandler() {
     //here we will use setCourseGoals to update our goals in todo-list. Then in the end we will take our existing goals and append a new one by using the spread operator(...) to spread existing course goals into this new array so that existing goals can be kept, then I will add new goal by using enteredGoalText as a new goal
-    setCourseGoals(currentCourseGoals)
+    setCourseGoals((currentCourseGoals)=>[
+       ...currentCourseGoals, enteredGoalText
+    ])
   }
 
   return (
@@ -32,7 +33,7 @@ export default function App() {
       </View>
 
       <View style={styles.goalsContainer}>
-        <Text>{courseGoals.map((goal)=> <Text key={goal}></Text>)}
+        {courseGoals.map((goal)=> <Text key={goal}>{goal}</Text>)}
       </View>
     </View>
   );
