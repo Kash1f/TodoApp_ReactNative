@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, Text, View, Button, TextInput, ScrollView } from "react-native";
+import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 
 export default function App() {
   const [enteredGoalText, setEnderedGoalText] = useState("");
@@ -22,7 +22,7 @@ export default function App() {
   }
 
   return (
-    <ScrollView style={styles.appContainer}>
+    <View style={styles.appContainer}>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
@@ -39,7 +39,7 @@ export default function App() {
         </View>
         ))}
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
